@@ -1,0 +1,516 @@
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+section {
+  scroll-margin-top: 20px;
+}
+
+/* Navbar */
+.navbar {
+  background: #172554;
+  color: white;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.navbar h2,
+.navbar h1 {
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #93c5fd;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  margin-bottom: 25px;
+}
+
+.hero input {
+  width: 90%;
+  max-width: 520px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Common section styles */
+.books-section,
+.recommendations {
+  padding: 45px 7%;
+  text-align: center;
+}
+
+.books-section h2,
+.recommendations h2 {
+  margin-bottom: 25px;
+  color: #172554;
+  font-size: 30px;
+}
+
+/* Book grid */
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );
+  gap: 22px;
+  margin-top: 25px;
+}
+
+/* Book cards */
+.book-card {
+  background: white;
+  padding: 25px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px #00000010;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow-wrap: anywhere;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px #00000015;
+}
+
+.book-icon {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.book-card h3 {
+  margin-bottom: 12px;
+  color: #1d4ed8;
+}
+
+.book-card p {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.book-card span {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* Buttons */
+button {
+  transition: background 0.2s, transform 0.2s;
+}
+
+.book-card button {
+  padding: 10px 14px;
+  margin: 8px 5px 0;
+  border: none;
+  border-radius: 6px;
+  background: #1d4ed8;
+  color: white;
+  cursor: pointer;
+}
+
+.book-card button:hover {
+  background: #172554;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Add book and borrow forms */
+.add-book {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px #00000010;
+}
+
+.add-book h2 {
+  text-align: center;
+  color: #172554;
+  margin-bottom: 25px;
+}
+
+.add-book form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-book input,
+.add-book textarea,
+.add-book select {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 15px;
+  background: white;
+}
+
+.add-book textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.add-book label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #172554;
+}
+
+.add-book button {
+  padding: 13px;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-book button:hover {
+  background: #172554;
+}
+
+/* Status messages */
+.message {
+  text-align: center;
+  margin: 20px;
+  font-weight: bold;
+}
+
+/* Members section */
+#members {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f1f5f9;
+  border-radius: 18px;
+}
+
+#members h2 {
+  text-align: center;
+  color: #172554;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+/* Members grid */
+#members .members-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );
+  gap: 22px;
+}
+
+/* Individual member card */
+#members .member-card {
+  background: white;
+  padding: 24px 20px;
+  border: 1px solid #dbeafe;
+  border-left: 5px solid #6366f1;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.08);
+  text-align: left;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+#members .member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.18);
+}
+
+#members .member-icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+#members .member-card h3 {
+  color: #1d4ed8;
+  font-size: 21px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+#members .member-card p {
+  margin: 10px 0;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+#members .member-card strong {
+  color: #172554;
+}
+
+/* Dashboard */
+.dashboard {
+  padding: 45px 7%;
+  margin: 25px auto;
+  background: #f8fafc;
+}
+
+.dashboard h2 {
+  text-align: center;
+  color: #172554;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(180px, 1fr)
+  );
+  gap: 22px;
+}
+
+.dashboard-card {
+  padding: 28px 18px;
+  border-radius: 16px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  border-bottom: 4px solid #1d4ed8;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+.dashboard-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.dashboard-card h3 {
+  font-size: 34px;
+  margin-bottom: 8px;
+  color: #172554;
+}
+
+.dashboard-card p {
+  color: #475569;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.books-total {
+  border-color: #2563eb;
+}
+
+.members-total {
+  border-color: #7c3aed;
+}
+
+.issued-total {
+  border-color: #d97706;
+}
+
+.available-total {
+  border-color: #059669;
+}
+
+.overdue-total {
+  border-color: #dc2626;
+}
+
+/* Borrow records */
+#borrow-records {
+  padding: 30px 7%;
+}
+
+#borrow-records h2 {
+  text-align: center;
+  color: #172554;
+  margin-bottom: 25px;
+}
+
+#borrow-records .book-card {
+  overflow-wrap: anywhere;
+}
+
+#borrow-records .book-card button {
+  margin-top: 10px;
+}
+
+/* Book recommendations */
+.recommendations {
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+}
+
+.recommendations h2 {
+  color: #172554;
+}
+
+.recommendations > p {
+  color: #475569;
+  margin: 10px auto 25px;
+  max-width: 650px;
+}
+
+/* Recommendation cards use the same book grid */
+.recommendations .book-container {
+  text-align: center;
+}
+
+.recommendations .book-card {
+  border-top: 4px solid #7c3aed;
+}
+
+.recommendations .book-card h3 {
+  color: #6d28d9;
+}
+
+.recommendations .book-card span {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+/* Footer */
+footer {
+  background: #172554;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    text-align: center;
+    padding: 18px 5%;
+  }
+
+  .navbar a {
+    margin: 8px;
+    display: inline-block;
+  }
+
+  .hero {
+    padding: 60px 18px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .books-section,
+  .recommendations {
+    padding: 35px 5%;
+  }
+
+  .add-book {
+    width: 92%;
+    padding: 22px;
+  }
+
+  #members {
+    width: 95%;
+    padding: 20px;
+  }
+
+  #members h2,
+  .dashboard h2,
+  .books-section h2,
+  .recommendations h2 {
+    font-size: 25px;
+  }
+
+  .dashboard {
+    padding: 30px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero input {
+    width: 100%;
+  }
+
+  .book-container,
+  #members .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .dashboard-card {
+    padding: 22px 10px;
+  }
+
+  .dashboard-card h3 {
+    font-size: 27px;
+  }
+
+  .add-book {
+    padding: 18px;
+  }
+}
